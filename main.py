@@ -116,10 +116,10 @@ def main():
 
         #Opción para las misiones
         elif menu == 8:
-            planets_df = pd.read_csv('csv\planets.csv')
-            starships_df = pd.read_csv('csv\starships.csv')
-            characters_df = pd.read_csv('csv\characters.csv')
-            weapons_df = pd.read_csv('csv\weapons.csv')
+            planets_df = pd.read_csv('csv/planets.csv')
+            starships_df = pd.read_csv('csv/starships.csv')
+            characters_df = pd.read_csv('csv/characters.csv')
+            weapons_df = pd.read_csv('csv/weapons.csv')
 
             planetas = planets_df['name'].tolist()
             naves = starships_df['name'].tolist()

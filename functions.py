@@ -235,7 +235,7 @@ def search_character(characters, name):
 
 # Gráfico de cantidad de personajes nacidos en cada planeta. Utilizamos pandas para leer el archivo .csv (https://youtu.be/_8onVOY2j4E?si=da5NtHjuFwfq604p, https://youtu.be/7WU3QixV_-s?si=PFO8BV7mt5sIucRQ)
 def graphic_planet_homeworld():
-    characters_df = pd.read_csv('csv\characters.csv')
+    characters_df = pd.read_csv('csv/characters.csv')
 
     characters_by_homeworld = characters_df['homeworld'].value_counts()
 
@@ -251,7 +251,7 @@ def graphic_planet_homeworld():
 
 # Gráfico de las características de una nave. Utilizamos pandas para leer el archivo .csv (https://youtu.be/_8onVOY2j4E?si=da5NtHjuFwfq604p, https://youtu.be/7WU3QixV_-s?si=PFO8BV7mt5sIucRQ)
 def create_starship_charts(option):
-    starships_df = pd.read_csv('csv\starships.csv')
+    starships_df = pd.read_csv('csv/starships.csv')
     if option == 1:
         # Gráfico de Longitud de la nave
         starships_df['length'] = pd.to_numeric(starships_df['length'], errors='coerce')
@@ -312,7 +312,7 @@ def create_starship_charts(option):
 
 # Calcuylos estadisticos sobre las características de la nave. Fuentes de autoaprendizaje: (https://youtu.be/_vPO2hoQedM?si=Hf4TfZFA4bZxLiDv, https://youtu.be/TqfnmNUSjRs?si=b7kfjPb0G8TfFCWV, https://youtu.be/zC4ogU9zXoo?si=vrfH-uCpWZIJfJYF, https://youtu.be/kwIfw4AmeE0?si=3d9UoAKCAF56Ipa1)
 def statistics_for_starship():
-    starships_df = pd.read_csv('csv\starships.csv')
+    starships_df = pd.read_csv('csv/starships.csv')
 
 # Calcula la media de la velocidad de la nave
     starships_df['hyperdrive_rating'] = pd.to_numeric(starships_df['hyperdrive_rating'], errors='coerce')
@@ -352,7 +352,7 @@ def mostrar_opciones(lista, tipo):
         print(f"{idx + 1}. {item}")
     print("Escriba 'fin' para terminar la selección.")
     seleccion = input(f"Seleccione el número correspondiente al {tipo} que desea: ")
-    while not( seleccion.isnumeric()):
+    while not( seleccion=="fin" or seleccion.isnumeric()):
         seleccion = input(f"Error. Seleccione el número correspondiente al {tipo} que desea: ")
     if seleccion.lower() == 'fin':
         return 'fin'
